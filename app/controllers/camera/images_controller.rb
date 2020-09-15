@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class Camera::ImagesController < Camera::ApplicationController
-  def show; end
+  def show
+    @edited_image = Camera::EditedImage.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    status 404
+  end
 
   def create
     image = params[:image]

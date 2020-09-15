@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 json.data do
-  json.image_url @edited_image.image.url
+  json.partial! partial: 'edited_image', edited_image: @edited_image
 end
