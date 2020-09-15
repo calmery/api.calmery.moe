@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     storage :file
 
     def asset_host
-      return "http://localhost:5000"
+      'http://localhost:5000'
     end
 
     def filename
