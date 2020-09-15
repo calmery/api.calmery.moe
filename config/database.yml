@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: api_calmery_moe_production
-  username: api_calmery_moe
-  password: <%= ENV['API_CALMERY_MOE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
