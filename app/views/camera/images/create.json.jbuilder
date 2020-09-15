@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 json.data do
-  json.message 'Not Implemented'
+  json.image_url @edited_image.image.url
 end
