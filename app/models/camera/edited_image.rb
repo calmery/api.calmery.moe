@@ -11,13 +11,22 @@ class Camera::EditedImage < ApplicationRecord
     image.url
   end
 
+  # rubocop:disable Metrics/MethodLength
   def og_image_url
     if Rails.env.production?
-      return Cloudinary::Utils.cloudinary_url(image.public_id, background: '#fff', crop: :pad, height: 630, width: 1200, secure: true)
+      return Cloudinary::Utils.cloudinary_url(
+        image.public_id,
+        background: '#fff',
+        crop: :pad,
+        height: 630,
+        width: 1200,
+        secure: true
+      )
     end
 
     image.url
   end
+  # rubocop:enable Metrics/MethodLength
 
   private
 
