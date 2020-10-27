@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   namespace :camera do
     resources :images, only: %i[show create]
+    resources :showcase, only: %i[index show], param: :page
   end
 end
